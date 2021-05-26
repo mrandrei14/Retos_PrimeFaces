@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+    </h:head>
+    <h:form>
+        <!--<h:body>-->
+            <p:growl id="growl" showDetail="true" />
+            <p:spinner value="1" min="1" max="10" rotate="true" style="margin-bottom: 25px;"/>
+        <!---</h:body>-->
+        <br />
+        <br />
+        <br />
+        <br />
+        <p:inputText id="txtUsuario" value="#{InicioMB.usuario}">
+            <p:ajax event="keyup" update="lblSalida" />
+        </p:inputText>
+        <p:outputLabel id="lblSalida" value="#{InicioMB.usuario}" />   
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <p:commandButton id="btnGuardar"
+                         styleClass="rounded-button ui-button-success" 
+                         actionListener="#{InicioMB.MostrarMensajeInfo}"
+                         value="Guardar" 
+                         icon="pi pi-check"
+                         iconPos="right"
+                         update="growl"/>
+    </h:form>
+    
+        
+    
+
+    
+    
+
+
+</html>
